@@ -142,8 +142,10 @@ export default {
       },
 
       update(el, binding) {
-        /* eslint-disable no-param-reassign */
-        el.querySelector('canvas.heatmap-canvas').style.display = binding.value ? 'inherit' : 'none';
+        if (el.querySelector('canvas.heatmap-canvas')) {
+          /* eslint-disable no-param-reassign */
+          el.querySelector('canvas.heatmap-canvas').style.display = binding.value ? 'inherit' : 'none';
+        }
       },
     });
   },
